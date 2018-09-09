@@ -4,8 +4,10 @@ has_xp = []
 no_xp = []
 
 def get_players(player_info):
-    """ Takes a CSV file are parses each row to two list,
-        then calls create_teams() to sort each player into teams """
+    """
+    Takes a CSV file are parses each row to two list,
+    then calls create_teams() to sort each player into teams.
+    """
     file = player_info
 
     with open(file, newline='') as csvfile:
@@ -21,11 +23,17 @@ def get_players(player_info):
                 del row
         create_teams()
 
+# As far as breaking down create_teams() some more one thing you could do is turn the
+# for loop portions into its own separate function. Then you could call it and reassign
+# the value back to your teams. Something
+# like "sharks = player_joiner(has_xp[0:3] + no_xp[0:3])" Regardless though, you are doing great.
 
 def create_teams():
-    """ Takes the 2 lists from get_players() and
-        spits them in to 3 teams and writes them
-        to teams.txt """
+    """
+    Takes the 2 lists from get_players() and
+    spits them in to 3 teams and writes them
+    to teams.txt
+    """
     sharks = ''
     dragons = ''
     raptors = ''
